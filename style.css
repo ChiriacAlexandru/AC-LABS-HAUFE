@@ -1,0 +1,34 @@
+body{
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+#main-section {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-section-maps-img{
+    width: 50vw;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+#locations-section {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.locations-section-single-location{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+}
