@@ -1,0 +1,52 @@
+Tabele in bazele de date necesare:
+Users :
+
+Nume de utilizator
+Email
+Parolă
+Rolul utilizatorului (user sau admin)
+Data înregistrării
+
+
+Locations:
+
+Nume locație
+Tipul locației (ex: atracție, restaurant, hotel)
+Descriere scurtă
+Coordonate (latitudine și longitudine)
+Imagine (link)
+Cine a adăugat locația (legătură cu un utilizator)
+Status (aprobată / în așteptare / respinsă)
+Data adăugării
+
+
+Routes:
+
+Utilizatorul care a creat traseul
+Punct de plecare (nume + coordonate)
+Punct de destinație (nume + coordonate)
+Locații incluse în traseu (una sau mai multe)
+Distanța totală (în km)
+Timp estimat de parcurs (în minute sau ore)
+Estimare consum combustibil
+Data creării
+
+
+Suggestions:
+
+Utilizatorul care a trimis sugestia
+Numele locației propuse
+Tipul locației (atracție, restaurant etc.)
+Coordonate
+Motivul pentru care se propune adăugarea
+Status (în așteptare / aprobată / respinsă)
+Cine a verificat sugestia (admin)
+Data sugestiei
+
+Reports:
+
+Utilizatorul care trimite feedback-ul
+Tipul feedback-ului (eroare, sugestie, plângere)
+Mesajul transmis
+Status (rezolvat / în lucru / ignorat)
+Data trimiterii
