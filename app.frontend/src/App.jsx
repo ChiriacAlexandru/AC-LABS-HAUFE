@@ -1,15 +1,13 @@
-import React from 'react';
-import HereMap from './components/HereMap';
+import { useState } from 'react'
 
-const App = () => {
-  const hereApiKey = 'vUy21Puu_rrwuDxBOnpQl73KylaQF1O6aFzyXeBsUWg'; // Înlocuiește cu cheia ta reală
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="app">
-      <h1>Sistem GPS cu HERE Maps</h1>
-      <HereMap apiKey={hereApiKey} />
-    </div>
-  );
-};
+    <>
+    
+    </>
+  )
+}
 
-export default App;
+export default App
