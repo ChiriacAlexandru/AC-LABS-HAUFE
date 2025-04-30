@@ -1,11 +1,16 @@
 import { useState } from 'react'
+import NavBar from './componets/NavBar'
+import Map from './componets/Map'
+import NavBarTop from './componets/NavBarTop'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    
+    <Map/>
+    <NavBar/>   
+    <NavBarTop/>  
+
     </>
   )
 }
