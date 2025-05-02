@@ -11,7 +11,7 @@ function Map() {
 
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/tagestudio/cm9zudu7q006201s3fzgwafy6', // Stilul personalizat
+  //    style: 'mapbox://styles/tagestudio/cm9zudu7q006201s3fzgwafy6', // Stilul personalizat
       center: [21.230, 45.750], // Centrul hărții
       zoom: 10, // Zoom-ul inițial
     })
