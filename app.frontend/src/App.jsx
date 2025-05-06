@@ -8,6 +8,7 @@ function App() {
   return (
     <>
     <Map/>
+    Test
     <NavBar/>   
     <NavBarTop/>  
 
