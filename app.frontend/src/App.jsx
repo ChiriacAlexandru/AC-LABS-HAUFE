@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import NavBar from './componets/NavBar'
-import Map from './componets/Map'
-import NavBarTop from './componets/NavBarTop'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Homepage from './pages/Homepage'
+import Loginpage from './pages/Loginpage'
 function App() {
-
   return (
-    <>
-    <Map/>
-    <NavBar/>   
-    <NavBarTop/>  
-
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path='/login' element={<Loginpage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
