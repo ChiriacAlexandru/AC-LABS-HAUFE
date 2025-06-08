@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import NavBar from './componets/NavBar'
-import Map from './componets/Map'
-import NavBarTop from './componets/NavBarTop'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
+import Homepage from './pages/Homepage';
 
 function App() {
-
   return (
-    <>
-    <Map/>
-    <NavBar/>   
-    <NavBarTop/>  
-
-    </>
-  )
+    <ErrorBoundary>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
