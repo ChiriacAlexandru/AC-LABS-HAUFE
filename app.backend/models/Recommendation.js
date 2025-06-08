@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const RecommendationSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   googlePlaceId: { type: String, required: true },

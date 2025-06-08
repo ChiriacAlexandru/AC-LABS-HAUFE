@@ -1,8 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
+
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 
 // Middleware pentru JSON
 app.use(express.json());
@@ -20,8 +27,10 @@ mongoose.connect(MONGO_URI)
 // Importăm rutele
 const userRoutes = require('./routes/user');
 app.use('/api/users', userRoutes);
-
-
+const routeRoutes = require('./routes/route');
+app.use('/api/routes', routeRoutes);
+const attractionRoutes = require('./routes/attraction');
+app.use('/api/attractions', attractionRoutes);
 
 
 // Pornire server

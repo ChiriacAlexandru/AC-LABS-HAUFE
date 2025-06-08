@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const PromotedLocationSchema = new mongoose.Schema({
   googlePlaceId: { type: String, required: true },
   promotedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // adminul

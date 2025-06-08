@@ -1,10 +1,18 @@
-import React from 'react'
-import MapComponent from './components/MapComponent'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
+import Homepage from './pages/Homepage';
 
-const App = () => {
+function App() {
   return (
-    <MapComponent />
-  )
+    <ErrorBoundary>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;

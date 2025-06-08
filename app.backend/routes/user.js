@@ -1,27 +1,12 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // modelul User
+const User = require('../models/User');
 
 const router = express.Router();
+const authMiddleware = require('../middleware/authMiddleware'); 
 
-// Secret pentru JWT (în realitate îl pui în .env)
 const JWT_SECRET = process.env.JWT_SECRET || 'secret';
-
-// Middleware de autentificare simplu JWT
-const authMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: 'Autentificare necesară' });
-
-  const token = authHeader.split(' ')[1];
-  try {
-    const userData = jwt.verify(token, JWT_SECRET);
-    req.user = userData; // userData trebuie să conțină cel puțin userId
-    next();
-  } catch {
-    return res.status(401).json({ message: 'Token invalid' });
-  }
-};
 
 // ===== Register =====
 router.post('/register', async (req, res) => {
@@ -79,7 +64,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// ===== Get profile (autentificat) =====
+// ===== Get profile =====
 router.get('/me', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.userId).select('-passwordHash');
@@ -92,7 +77,7 @@ router.get('/me', authMiddleware, async (req, res) => {
   }
 });
 
-// ===== Update profil (ex: preferințe) =====
+// ===== Update profile =====
 router.put('/me', authMiddleware, async (req, res) => {
   try {
     const { name, preferences } = req.body;
